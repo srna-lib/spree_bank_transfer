@@ -15,6 +15,7 @@ module Spree
 
     def find_payment
       @payment = spree_current_user.payments.where(id: params[:id]).first
+      logger.debug "User email: #{spree_current_user.email}"
       unless @payment
         flash[:error] = Spree.t(:payment_not_found)
         redirect_to :back
