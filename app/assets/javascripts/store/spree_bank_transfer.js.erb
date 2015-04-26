@@ -13,6 +13,7 @@ $(document).ready(function() {
   $('.add_bt_details').click(function() {
     $(this).hide();
     $('.bt_payment_form').show();
+    $('.bt_payment_form').removeClass('hidden')
   });
 
   $('.bt_payment_form input[type="submit"]').click(function(event) {
