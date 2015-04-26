@@ -5,9 +5,7 @@
 <% end %>
 
 <% content_for :page_actions do %>
-  <li>
-    <%= button_link_to Spree.t(:new_bank), new_admin_bank_path %>
-  </li>
+    <%= button_link_to Spree.t(:new_bank), new_admin_bank_path, { :class => "btn-success", :icon => 'add', :id => 'admin_new_bank' } %>
 <% end %>
 
 <%= paginate @banks %>
