@@ -1,0 +1,22 @@
+<% if @order.available_payment_methods.any? { |pm| pm.type == 'Spree::PaymentMethod::BankTransfer' } %>
+  <p><%= link_to Spree.t(:how_bank_transfer_works), "javascript:void(0)", :id => 'banktransfer_instructions' %></p>
+<% end %>
+
+
+<!-- Modal -->
+<div class="modal fade" id="instructions-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"><%= Spree.t(:how_bank_transfer_works) %></h4>
+      </div>
+      <div class="modal-body">
+        <%= render 'spree/shared/instructions' %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-custom" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

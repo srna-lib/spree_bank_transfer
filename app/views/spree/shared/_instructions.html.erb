@@ -1,0 +1,19 @@
+<b><%= Spree.t(:steps, scope: :instructions) %></b>
+<ol>
+  <li>
+    <%= Spree.t(:step1, scope: :instructions) %>
+    <div style="margin-top: 20px">
+      <%= render "spree/checkout/payment/banktransfer" %>
+    </div>
+  </li>
+  <li>
+    <%= Spree.t(:title, scope: [:instructions, :step2]) %>
+    <ol style="padding:10px 0 0 20px" type='a'>
+      <li><%= Spree.t(:a, scope: [:instructions, :step2]) %></li>
+      <li><%= Spree.t(:b, scope: [:instructions, :step2]) %></li>
+      <li><%= Spree.t(:c, scope: [:instructions, :step2]) %></li>
+      <li><%= Spree.t(:d, scope: [:instructions, :step2]) %></li>
+      <br><br>
+    </ol>
+  </li>
+</ol>

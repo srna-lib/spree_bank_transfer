@@ -17,6 +17,17 @@ es:
     payment_successfully_updated: Pago fue actualizado
     payment_reference_details: Detalles de pago
     transaction_reference_no: Numero de transaccion
+
+    instructions:
+      steps: Pasos
+      step1: Depositar el monto total del orden a uno de siguientes cuentas
+      step2:
+        title: Ingresar la referencia de transaccion
+        a: Entrar a la pagina de 'Mi Cuenta'
+        b: Eligir el orden que quiere pagar
+        c: En la seccion de informacion de pago ingresar detalles de la transaccion. 
+        d: Hacer submit 
+
   activerecord:
     models:
       spree/bank:

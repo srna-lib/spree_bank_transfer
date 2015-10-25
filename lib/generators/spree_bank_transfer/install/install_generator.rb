@@ -5,8 +5,8 @@ module SpreeBankTransfer
       class_option :auto_run_migrations, :type => :boolean, :default => false
 
       def add_javascripts
-        append_file 'vendor/assets/javascripts/spree/frontend/all.js', "\n//= require store/spree_bank_transfer\n"
-        append_file 'vendor/assets/javascripts/spree/backend/all.js', "\n//= require admin/spree_bank_transfer\n"
+        append_file 'vendor/assets/javascripts/spree/frontend/all.js', "\n//= require frontend/spree_bank_transfer\n"
+        append_file 'vendor/assets/javascripts/spree/backend/all.js', "\n//= require backend/spree_bank_transfer\n"
       end
 
       def add_stylesheets
