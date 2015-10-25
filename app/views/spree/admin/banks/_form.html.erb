@@ -3,25 +3,25 @@
 <%= form_for [:admin, @bank] do |f| %>
   <fieldset>
     <div data-hook="admin_inside_bank_form" class="row">
-      <div class="alpha five columns">
+      <div class="col-md-6 form-group field">
         <%= f.field_container :name do %>
           <%= f.label :name, Spree.t(:name) %> <span class="required">*</span><br />
           <%= f.error_message_on :name, :class => 'fullwidth title' %>
-          <%= f.text_field :name, :class => 'fullwidth' %>
+          <%= f.text_field :name, :class => 'fullwidth form-control' %>
         <% end %>
 
         <%= f.field_container :account_no do %>
           <%= f.label :account_no, Spree.t(:account_no) %><span class="required">*</span><br />
-          <%= f.text_field :account_no, :class => 'fullwidth' %>
+          <%= f.text_field :account_no, :class => 'fullwidth form-control' %>
         <% end %>
 
         <%= f.field_container :additional_details do %>
           <%= f.label :additional_details, Spree.t(:additional_details) %><br />
-          <%= f.text_area :additional_details, :rows => 10, :class => 'fullwidth' %>
+          <%= f.text_area :additional_details, :rows => 10, :class => 'fullwidth form-control' %>
         <% end %>
 
         <%= f.field_container :active do %>
-          <%= f.check_box :active %>
+          <%= f.check_box :active, class: "form-group field" %>
           <%= f.label :active, Spree.t(:active) %>
         <% end %>
 
