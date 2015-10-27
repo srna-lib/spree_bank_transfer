@@ -14,7 +14,7 @@ module Spree
     end
 
     def find_payment
-      @payment = spree_current_user.payments.where(id: params[:id]).first
+      @payment = spree_current_user.payments.friendly.find(params[:id])
       logger.debug "User email: #{spree_current_user.email}"
       unless @payment
         flash[:error] = Spree.t(:payment_not_found)
