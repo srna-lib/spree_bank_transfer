@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_bank_transfer'
-  s.version     = '3.1.0'
+  s.version     = '3.2.0'
   s.summary     = 'Spree extension to create bank transfer payment method.'
   s.description = 'This Spree extension allows admin to provide bank transfer payment method to its users.'
   s.required_ruby_version = '>= 2.2.0'
