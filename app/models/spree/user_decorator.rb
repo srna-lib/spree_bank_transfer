@@ -1,3 +1,9 @@
-Spree::User.class_eval do
-  has_many :payments, :through => :orders
+module SpreeBankTransfer
+  module UserDecorator
+    def self.prepended(base)
+      base.has_many :payments, through: :orders
+    end
+  end
 end
+
+Spree::User.prepend(SpreeBankTransfer::UserDecorator)
