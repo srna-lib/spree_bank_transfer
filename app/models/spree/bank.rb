@@ -1,8 +1,8 @@
 module Spree
-  class Bank < ActiveRecord::Base
-    validates :name, :account_no , :presence => true
-    validates_uniqueness_of :account_no , :scope => :name
+  class Bank < Spree::Base
+    validates :name, :account_no, presence: true
+    validates :account_no, uniqueness: { scope: :name }
 
-    scope :active, -> { where(:active => true) }
+    scope :active, -> { where(active: true) }
   end
 end

@@ -13,6 +13,8 @@ module Spree
       redirect_back(fallback_location: spree.root_path)
     end
 
+    private
+
     def find_payment
       @payment = spree_current_user.payments.friendly.find(params[:id])
       unless @payment
@@ -20,10 +22,9 @@ module Spree
         redirect_back(fallback_location: spree.root_path)
       end
     end
-    
-    private
-      def payment_params
-        params.require(:payment).permit(:deposited_on, :bank_name, :account_no, :transaction_reference_no)
-      end
+
+    def payment_params
+      params.require(:payment).permit(:deposited_on, :bank_name, :account_no, :transaction_reference_no)
+    end
   end
 end
