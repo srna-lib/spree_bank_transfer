@@ -10,15 +10,14 @@ module Spree
       else
         flash[:error] = payment_details.errors.to_sentence
       end
-      redirect_to :back
+      redirect_back(fallback_location: spree.root_path)
     end
 
     def find_payment
       @payment = spree_current_user.payments.friendly.find(params[:id])
-      logger.debug "User email: #{spree_current_user.email}"
       unless @payment
         flash[:error] = Spree.t(:payment_not_found)
-        redirect_to :back
+        redirect_back(fallback_location: spree.root_path)
       end
     end
     
